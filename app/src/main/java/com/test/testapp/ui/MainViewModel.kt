@@ -92,7 +92,7 @@ class MainViewModel @Inject constructor(
                             val moveH = max(1, newS.containerH - newS.iconH).toFloat()
                             val xf = (cx / moveW).coerceIn(0f, 1f)
                             val yf = (cy / moveH).coerceIn(0f, 1f)
-                            repo.save(xf, yf)               // <-- через репозиторій
+                            repo.save(xf, yf)
                             savedXFraction = xf
                             savedYFraction = yf
                         }
