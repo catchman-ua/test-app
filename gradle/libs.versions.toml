@@ -1,0 +1,33 @@
+[versions]
+agp = "8.6.0"
+kotlin = "1.9.24"
+hilt = "2.51.1"
+activityKtx = "1.9.2"
+lifecycle = "2.8.4"
+coreKtx = "1.13.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+constraint = "2.1.4"
+coroutines = "1.9.0"
+datastore = "1.1.1"
+javapoet = "1.13.0"
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android      = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-kapt         = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+hilt-android        = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+
+[libraries]
+androidx-core-ktx      = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+androidx-appcompat     = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+material               = { module = "com.google.android.material:material", version.ref = "material" }
+constraintlayout       = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraint" }
+lifecycle-viewmodel    = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+lifecycle-runtime      = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
+activity-ktx           = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
+coroutines-android     = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+datastore-preferences  = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore" }
+hilt-android           = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hilt-compiler          = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+javapoet               = { module = "com.squareup:javapoet", version.ref = "javapoet" }
