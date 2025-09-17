@@ -1,5 +1,6 @@
 package com.test.testapp.ui
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
@@ -16,10 +17,11 @@ import kotlinx.coroutines.launch
 class MainActivity : ComponentActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val vm: MainViewModel by viewModels()   // <-- фабрика більше не потрібна
+    private val vm: MainViewModel by viewModels()
 
     private val tmp = IntArray(2)
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -46,8 +48,7 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-
-        binding.draggableIcon.setOnTouchListener { _, e ->
+         binding.draggableIcon.setOnTouchListener { _, e ->
             val (cx, cy) = pointerInContainer(binding.dragContainer, e)
             vm.send(IconIntent.OnTouch(e.action, cx, cy))
             true
