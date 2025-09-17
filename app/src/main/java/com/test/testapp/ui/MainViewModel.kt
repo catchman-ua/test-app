@@ -32,7 +32,6 @@ class MainViewModel @Inject constructor(
     private var fractionsLoaded = false
 
     init {
-        // читаємо збережені фракції одноразово
         viewModelScope.launch {
             repo.positions.firstOrNull()?.let { f ->
                 savedXFraction = f.xRatio
@@ -42,7 +41,6 @@ class MainViewModel @Inject constructor(
             tryRestore()
         }
 
-        // головний редʼюсер
         viewModelScope.launch {
             intents.collect { intent -> reduce(intent) }
         }
